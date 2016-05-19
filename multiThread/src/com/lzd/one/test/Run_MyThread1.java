@@ -1,6 +1,6 @@
 package com.lzd.one.test;
 
-import com.lzd.one.mythread.MyThread;
+import com.lzd.one.mythread.MyThread1;
 
 /**
  * 测试MyThread线程的运行
@@ -8,10 +8,10 @@ import com.lzd.one.mythread.MyThread;
  * @author lzd
  *
  */
-public class Run_MyThread {
+public class Run_MyThread1 {
 
 	public static void main(String[] args) {
-		MyThread mythread = new MyThread();
+		MyThread1 mythread = new MyThread1();
 		mythread.start();
 		System.out.println("线程运行结束");
 	}

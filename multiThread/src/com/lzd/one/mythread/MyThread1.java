@@ -5,7 +5,7 @@ package com.lzd.one.mythread;
  * @author lzd
  *
  */
-public class MyThread extends Thread{
+public class MyThread1 extends Thread{
 
 	@Override
 	public void run() {
