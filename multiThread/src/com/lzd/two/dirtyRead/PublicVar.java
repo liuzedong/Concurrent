@@ -26,7 +26,7 @@ public class PublicVar {
 		}
 	}
 	
-	// 读取数据没有进行同步
+	// 读取数据没有进行同步， 如果在此处加上synchronized 关键字，那么就会同步了
 	public void getValue(){
 		System.out.println("getValue method thread name = " + Thread.currentThread().getName() 
 				+ ",username = " + username + ",password = " + password);
