@@ -11,10 +11,10 @@ public class Station {
 		// 一个售票的过程，四个售票台
 		Tickets ticket = new Tickets();
 
-		Thread station1 = new Thread(new Tickets());
-		Thread station2 = new Thread(new Tickets());
-		Thread station3 = new Thread(new Tickets());
-		Thread station4 = new Thread(new Tickets());
+		Thread station1 = new Thread(ticket);
+		Thread station2 = new Thread(ticket);
+		Thread station3 = new Thread(ticket);
+		Thread station4 = new Thread(ticket);
 		
 		station1.start();
 		station2.start();
