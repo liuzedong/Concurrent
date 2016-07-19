@@ -33,7 +33,7 @@ public class BaseComponent implements ActionListener{
 	public BaseComponent(){
 		// 为窗口对象和面板对象赋值
 		f = new Frame("基本组件");
-		result = new Label("检查那个按钮被点击啦");
+		result = new Label("检查那个按钮被点击啦", Label.CENTER);
 		
 		// 为按钮对象赋值和设置
 		b1 = new Button("左边");
@@ -56,6 +56,7 @@ public class BaseComponent implements ActionListener{
 		f.add(b1, BorderLayout.WEST);
 		f.add(b2, BorderLayout.EAST);
 		f.pack();
+		f.setSize(300, 100);
 		f.setVisible(true);
 		
 		
