@@ -32,14 +32,13 @@ public class DigestThread extends Thread{
 			// 使用sha算法，进行加密流信息
 			DigestInputStream din = new DigestInputStream(in, sha);
 			// 读取这个文件信息，当文件读取到-1的时候，就读取完成勒文件
-			while(din.read() != -1){
-				din.close();
-				byte[] disgest = sha.digest();
-				StringBuilder result = new StringBuilder(filename);
-				result.append(": ");
-				result.append(DatatypeConverter.printHexBinary(disgest));
-				System.out.println(result);
-			}
+			while(din.read() != -1);
+			din.close();
+			byte[] disgest = sha.digest();
+			StringBuilder result = new StringBuilder(filename);
+			result.append(": ");
+			result.append(DatatypeConverter.printHexBinary(disgest));
+			System.out.println(result);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
