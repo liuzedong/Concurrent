@@ -18,7 +18,7 @@ public class DMoz {
 	public static void main(String[] args) {
 		String target = "";
 		
-		String[] values = new String[]{"java"};
+		String[] values = new String[]{"我们"};
 		
 		for (int i = 0; i < values.length; i++) {
 			target += values[i] + " ";
@@ -27,7 +27,7 @@ public class DMoz {
 		
 		QueryString q = new QueryString();
 		q.add("s", "10520733385329581432");
-		q.add("ie", "gbk");
+		q.add("ie", "uhf-8");
 		q.add("q", target);
 		// 第几页
 		q.add("p", "1");
