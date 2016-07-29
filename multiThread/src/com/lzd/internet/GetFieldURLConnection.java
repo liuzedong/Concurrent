@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * 获取URLConnetction 中的get参数
@@ -36,7 +38,7 @@ public class GetFieldURLConnection {
 			System.out.println("content-type 头字段的值 : " + contentType);
 			
 			long date = uc.getDate();
-			System.out.println("date 头字段的值 : " + date);
+			System.out.println("date 头字段的值 : " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(date)));
 			
 			
 			
