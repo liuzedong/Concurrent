@@ -82,10 +82,10 @@ public class FormPoster {
 		poster.add("q", "Apache Commons is an Apache project focused on all aspects of reusable Java components. ");
 		poster.add("from", "en");
 		poster.add("to", "zh");
-		poster.add("appid", "20160729000025992");
+		poster.add("appid", "");
 		poster.add("salt", "1435660288");
 		
-		String sign = "20160729000025992" + "Apache Commons is an Apache project focused on all aspects of reusable Java components. " + "1435660288" + "_wvFZHCp4mMwZ2xvPJGe";
+		String sign = "" + "Apache Commons is an Apache project focused on all aspects of reusable Java components. " + "1435660288" + "";
 		sign = DigestUtils.md5Hex(sign);
 		poster.add("sign", sign);
 		
