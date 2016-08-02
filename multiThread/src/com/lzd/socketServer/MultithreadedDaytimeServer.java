@@ -10,7 +10,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * 使用多线程来处理服务器的连接
+ * 使用多线程来处理服务器的连接,这个线程是无限创建的
+ * 到达上限时，会内存溢出，应该使用线程池
  * @date 2016年8月2日
  * @author lzd
  *
