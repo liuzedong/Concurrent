@@ -1,5 +1,6 @@
 package com.lzd.channels;
 
+import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.SocketException;
@@ -49,7 +50,7 @@ public abstract class UDPServer implements Runnable{
 	}
 
 	// 让子类实现，进行处理返回结果
-	public abstract void respond(DatagramSocket socket, DatagramPacket incoming);
+	public abstract void respond(DatagramSocket socket, DatagramPacket incoming) throws IOException;
 	
 	// 使连接关闭
 	public void shutDown(){
