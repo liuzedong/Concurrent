@@ -2,11 +2,14 @@ package com.lzd.demoisdemo;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Iterator;
 import java.util.logging.Logger;
 
 import org.junit.Test;
@@ -21,6 +24,55 @@ public class Demo {
 
 	private final static Logger log = Logger.getLogger(Demo.class.getName());
 	
+	
+	@Test
+	public void systemContent() throws IOException{
+		String bulidDir = StaticPropertiesLoad.getUrlPropertis();
+		System.out.println(bulidDir);
+		Object value = StaticPropertiesLoad.getValue("url1");
+		System.out.println(value);
+		
+		URL url = new URL((String) value);
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		
+		connection.setReadTimeout(1000 * 20);
+		connection.addRequestProperty("charset", "gb2312");
+		
+		
+		connection.connect();
+		String contentType = connection.getContentType();
+		System.out.println(contentType);
+		for (int i = 0; i <20; i++) {
+			String key = connection.getHeaderFieldKey(i);
+			String value2 = connection.getHeaderField(i);
+			System.out.println(key + " : " + value2);
+		}
+		InputStream in = connection.getInputStream();
+		Reader r = new InputStreamReader(in);
+		while(r.read() != -1){
+			System.out.print((char) r.read());
+		}
+	}
+	
+	
+	/**
+	 * 获取页面的状态码
+	 * 
+	 * @author 刘泽栋 2016年8月26日 下午6:49:35
+	 * @throws IOException 
+	 */
+	@Test
+	public void testTenv() throws IOException{
+		URL url = new URL("https://antx11.answern.com/com.isoftstone.iics.www/pay/return");
+		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+		connection.setReadTimeout(4000); 	// 设置读取时间
+		connection.setConnectTimeout(4000);	// 设置超时时间
+		int responseCode = connection.getResponseCode();
+		System.out.println(responseCode);
+		
+		
+		
+	}
 	
 	@Test
 	public void testStringBuffer(){
